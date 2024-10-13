@@ -14,121 +14,157 @@ const FooterContainer = styled.footer`
   box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
 `;
 
+const AlphabetContainer = styled.div`
+  display: flex;
+  justify-content: space-between; /* Align items to left and right */
+  align-items: center; /* Vertically center the content */
+  margin-bottom: 20px;
+  padding: 10px 0;
+`;
+
+const AlphabetHeader = styled.span`
+  font-size: 18px;
+  font-weight: bold;
+  color: #06416b;
+`;
+
+const AlphabetButton = styled.button`
+  background-color: #fff;
+  border: 1px solid #d1d5da;
+  border-radius: 5px;
+  margin: 2px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #06416b;
+`;
+
 const FooterNav = styled.nav`
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-between;
+  padding: 0 100px; 
   margin-bottom: 20px;
+`;
+
+const FooterColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
 const FooterNavLink = styled.a`
   font-family: Roboto;
   font-size: 16px;
-  color: #333;
+  color: #06416b;
   text-decoration: none;
+  margin: 5px 0;
+  &:hover {
+    color: #333;
+  }
 `;
 
-const FooterContent = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-`;
-
-const FooterText = styled.div`
-  font-family: Roboto;
-  font-size: 25px;
-  font-weight: 700;
-  color: #333;
-  left: 800px;
+const TrendingNameContainer = styled.div`
   text-align: left;
-  padding: 20px
 `;
 
-const FooterForm = styled.form`
-  display: flex;
-  gap: 10px;
-  padding-right: 200px;
-`;
-
-const FooterInput = styled.input`
-  font-family: Roboto;
+const DateButton = styled.button`
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 2px;
   font-size: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align : center;
-`;
-
-const FooterButton = styled.button`
-  padding: 10px 20px;
-  font-family: Roboto;
-  font-size: 16px;
-  color: #fff;
-  background-color: #23d19d;
-  border: none;
-  border-radius: 5px;
   cursor: pointer;
+  color: #06416b;
 `;
 
 const FooterCopyright = styled.div`
   font-family: Roboto;
   font-size: 14px;
-  color: #aaa;
+  color: #06416b;
   margin-top: 20px;
 `;
 
-const FooterIcons = styled.div`
-  display: flex;
-  gap: 15px;
-  margin-top: 10px;
+const StateButton = styled.button`
+  background-color: #fff;
+  border: 1px solid #d1d5da;
+  border-radius: 20px;
+  margin: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #06416b;
 `;
 
-const FooterIcon = styled.a`
-  color: #333;
-  font-size: 20px;
-  text-decoration: none;
+const TrendingNameGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
 `;
 
 const Footer = () => {
   return (
     <FooterContainer>
+      {/* Alphabet Search */}
+      <AlphabetContainer>
+        <AlphabetHeader>US People Record Directory</AlphabetHeader>
+        <div>
+          {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((char) => (
+            <AlphabetButton key={char}>{char}</AlphabetButton>
+          ))}
+        </div>
+      </AlphabetContainer>
+
       <FooterNav>
-        <FooterNavLink href="#">Home</FooterNavLink>
-        <FooterNavLink href="#">Blog</FooterNavLink>
-        <FooterNavLink href="#">Pricing</FooterNavLink>
-        <FooterNavLink href="#">Contact us</FooterNavLink>
-        <FooterNavLink href="#">Privacy Policy</FooterNavLink>
+        {/* Company Section */}
+        <FooterColumn>
+          <FooterNavLink href="#">Company</FooterNavLink>
+          <FooterNavLink href="#">Blog</FooterNavLink>
+          <FooterNavLink href="#">Contact</FooterNavLink>
+        </FooterColumn>
+
+        {/* Support Section */}
+        <FooterColumn>
+          <FooterNavLink href="#">Support</FooterNavLink>
+          <FooterNavLink href="#">FAQs</FooterNavLink>
+          <FooterNavLink href="#">Terms of Service</FooterNavLink>
+          <FooterNavLink href="#">Privacy Policy</FooterNavLink>
+          <FooterNavLink href="#">Remove Data</FooterNavLink>
+        </FooterColumn>
+
+        {/* Trending Name Search */}
+        <TrendingNameContainer>
+          <h4 style={{ color: '#06416b' }}>Trending Name Search</h4>
+          <TrendingNameGrid>
+            {[...Array(9).keys()].map((i) => (
+              <DateButton key={i}>10/{12 - i}</DateButton>
+            ))}
+          </TrendingNameGrid>
+          <FooterNavLink href="#">Most Popular Full Names</FooterNavLink>
+          <FooterNavLink href="#">Most Popular Last Names</FooterNavLink>
+        </TrendingNameContainer>
       </FooterNav>
-      <FooterContent>
-        <FooterText>
-          Subscribe to our newsletter to get
-          latest updates and news
-        </FooterText>
-        <FooterForm>
-          <FooterInput type="email" placeholder="Enter Your Email" />
-          <FooterButton type="submit">Subscribe</FooterButton>
-        </FooterForm>
-      </FooterContent>
-      <FooterIcons>
-        <FooterIcon href="#">
-          <FacebookIcon />
-          {/* <i className="fab fa-facebook-f"></i> */}
-        </FooterIcon>
-        <FooterIcon href="#">
-          {/* <i className="fab fa-twitter"></i> */}
-          <XIcon />
-        </FooterIcon>
-        <FooterIcon href="#">
-          {/* <i className="fab fa-instagram"></i> */}
-          <InstagramIcon />
-        </FooterIcon>
-        <FooterIcon href="#">
-          {/* <i className="fab fa-linkedin"></i> */}
-          <LinkedInIcon />
-        </FooterIcon>
-      </FooterIcons>
+
+      {/* Browse by State */}
+      <div>
+        <span style={{ color: '#06416b' }}>Browse by State:</span>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', marginTop: '10px' }}>
+          {[
+            "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA",
+            "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD",
+            "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ",
+            "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC",
+            "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY",
+          ].map((state) => (
+            <StateButton key={state}>{state}</StateButton>
+          ))}
+        </div>
+      </div>
+
+      {/* Footer Copyright */}
       <FooterCopyright>
-        &copy; 2023 Copyright@123
+        &copy; 2024 U.S. People Search
       </FooterCopyright>
     </FooterContainer>
   );
