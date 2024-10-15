@@ -12,7 +12,7 @@ export default function Header() {
             <img
               src={require("../Assets/images/US-01-01.png")}
               alt="Waypoint Warranty Logo"
-              className="w-[150px] my-2"  // Reduced size
+              className="w-[100px]"  
             />
           </div>
   

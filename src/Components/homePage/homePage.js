@@ -32,6 +32,8 @@ import Footer from "../footer";
 import FeaturedOn from "../bootomText";
 import FindRecord from "../findrecord";
 import Header from "../header";
+import PersonLookupSection from "../PersonLookupSection";
+
 
 const HomePage = () => {
   const theme = useTheme();
@@ -516,7 +518,7 @@ const HomePage = () => {
       <div
         className=" grid grid-flow-row grid-rows-4 md:grid-rows-2 pb-3 "
         style={{
-          backgroundImage: `url(${require("../../Assets/images/homebg.png")})`,
+          backgroundImage:`url(${require("../../Assets/images/homebg.png")})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
@@ -532,7 +534,7 @@ const HomePage = () => {
                 width: "auto",
                 maxWidth: "200px",
               }}
-              src={require("../../Assets/images/US-01.png")}
+              // src={require("../../Assets/images/US-01.png")}
             />
           </div>
           <div className="text-right">
@@ -680,8 +682,8 @@ const HomePage = () => {
         </div>
 
         <FeaturedOn />
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 };
