@@ -32,6 +32,7 @@ import Footer from "../footer";
 import FeaturedOn from "../bootomText";
 import FindRecord from "../findrecord";
 import Header from "../header";
+import PersonLookupSection from "../personLookupSection";
 
 const HomePage = () => {
   const theme = useTheme();
@@ -532,7 +533,7 @@ const HomePage = () => {
                 width: "auto",
                 maxWidth: "200px",
               }}
-              src={require("../../Assets/images/US-01.png")}
+              // src={require("../../Assets/images/US-01.png")}
             />
           </div>
           <div className="text-right">
@@ -680,8 +681,8 @@ const HomePage = () => {
         </div>
 
         <FeaturedOn />
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 };
