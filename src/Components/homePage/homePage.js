@@ -34,7 +34,6 @@ import FindRecord from "../findrecord";
 import Header from "../header";
 import PersonLookupSection from "../PersonLookupSection";
 
-
 const HomePage = () => {
   const theme = useTheme();
 
